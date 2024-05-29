@@ -24,39 +24,64 @@ class _MyWidgetState extends State<Login> {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: const Color.fromARGB(255, 247, 247, 247),
       body: Center(
-        child: Column(
-          children: [
-            Container(
-              // Container 2
-              width: 200, // Adjust width as needed
-              height: 200, // Adjust height as needed
-              color: Colors.green, // Example color
-              child: Center(
-                child: Image.asset(
-                  'assets/images/loginicon.jpg', // Path to your image asset
-                  width: 100, // Adjust width as needed
-                  height: 100, // Adjust height as needed
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.white,
+                child: Center(
+                  child: Image.asset(
+                    'Assessts/images/loginicon.jpg',
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.blue,
-              child: const Center(
-                child: Text("Container 1"),
+              const SizedBox(
+                height: 10,
               ),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-              child: const Center(
-                child: Text("Container 2"),
+              Container(
+                width: 200,
+                height: 40,
+                color: Colors.blue,
+                child: const Center(
+                  child: Text("Container 1"),
+                ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: 200,
+                height: 40,
+                color: Colors.blue,
+                child: const Center(
+                  child: Text("Container 2"),
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
