@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sharedpreference_loginpage/Home.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,6 +10,8 @@ class Login extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<Login> {
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +52,14 @@ class _MyWidgetState extends State<Login> {
                 width: 200,
                 height: 40,
                 color: Colors.blue,
-                child: const Center(
-                  child: Text("Container 1"),
+                child: Center(
+                  child: TextField(
+                    controller: namecontroller,
+                    decoration: const InputDecoration(
+                      hintText: 'Enter your text:',
+                      border: InputBorder.none,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -60,15 +69,29 @@ class _MyWidgetState extends State<Login> {
                 width: 200,
                 height: 40,
                 color: Colors.blue,
-                child: const Center(
-                  child: Text("Container 2"),
+                child: Center(
+                  child: TextField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      hintText: 'Enter your Password:',
+                      border: InputBorder.none,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 40,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  String name = namecontroller.text;
+                  String password = passwordController.text;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,
                 ),
